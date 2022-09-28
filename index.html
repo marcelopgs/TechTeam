@@ -12,6 +12,12 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	<script type="text/javascript">
+		function playMusic(){
+			var music = new Audio("descricao/teste.ogg");
+			music.play();
+  		}
+	</script>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
@@ -39,12 +45,9 @@
 								ministrada pelo Prof. Dr. Mario Minami no terceiro quadrimestre <br />
 								de 2022 na Universidade Federal do ABC.
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Veja mais</a></li>
-							</ul><br>
-							<h3> Audiodescrição </h3>
-							<audio controls>
-								<source src="descricao/teste.ogg" type="audio/ogg">
-							</audio>
+								<li><a href="#one" class="button scrolly">Veja mais</a></li> &emsp;&emsp;
+								<input type="button" value="Audiodescrição" onclick="playMusic()" />
+							</ul>
 						</div>
 					</section>
 
