@@ -172,6 +172,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		color: #c9c3d1
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -2515,9 +2516,22 @@ input, select, textarea {
 			font-weight: 900;
 		}
 
+		.icon.brands {
+			color: #d3c0ff;
+			line-height: 2em;
+			margin: 0 0.5em 4em 0;
+		}
+		
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
+
+		.icon.majoralt{
+			color: #d3c0ff;
+			line-height: 2em;
+			margin: 0 0.5em 4em 0;
+		}
+
 
 		.icon.major {
 			width: 2.5em;
