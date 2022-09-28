@@ -131,3 +131,4 @@ dmypy.json
 # MacOS files
 .DS_Store
 *env
+generic.html
