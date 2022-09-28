@@ -1,2 +1,2 @@
 # CodMultimidia
-Teste pra ver se funciona
+Repositório do grupo TechTeam, formado para a realização das atividades da disciplina Codificação de Sinais Multimídia, ministrada pelo Prof. Dr. Mario Minami na Universidade Federal do ABC, no terceiro quadrimestre de 2023.
