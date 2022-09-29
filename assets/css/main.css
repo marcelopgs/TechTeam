@@ -2518,8 +2518,8 @@ input, select, textarea {
 
 		.icon.brands {
 			color: #d3c0ff;
-			line-height: 2em;
-			margin: 0 0.5em 4em 0;
+			line-height: 1.5em;
+			margin: 0 0.5em 0 0;
 		}
 		
 		.icon.brands:before {
@@ -2528,7 +2528,7 @@ input, select, textarea {
 
 		.icon.majoralt{
 			color: #d3c0ff;
-			line-height: 2em;
+			line-height: 1.5em;
 			margin: 0 0.5em 4em 0;
 		}
 
