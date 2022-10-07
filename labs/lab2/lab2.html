@@ -49,9 +49,11 @@
 								<p>A configuração utilizando a câmera do celular foi mais simples, utilizando apenas uma luz de anel e as configurações de imagem já presentes no aplicativo de câmera.</p>
 
 							<h2>Pós-processamento</h2>
-								O pós-processamento das imagens foi realizado utilizando o software <a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a> para as montagens, mudanças de cor e cortes,  e a biblioteca <a href="https://opencv.org/">OpenCV</a> em Python para mudanças de resolução e cor.
+								O pós-processamento das imagens foi realizado utilizando o software <a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a> para as montagens, mudanças de cor e cortes,  e a biblioteca <a href="https://opencv.org/">OpenCV</a> em Python para mudanças de resolução e cor.<br><br>
 
 							<h3><li>Photoshop</li></h3>
+								<p>Adobe Photoshop é um software caracterizado como editor de imagens bidimensionais do tipo raster (possuindo ainda algumas capacidades de edição típicas dos editores vectoriais) desenvolvido pela Adobe Systems. É considerado o líder no mercado dos editores de imagem profissionais, assim como o programa de facto para edição profissional de imagens digitais e trabalhos de pré-impressão.</p>
+								<p>As fotografias dos integrantes do grupo foram tratadas utilizando o software Adobe Photoshop. O software também foi utilizado para manipulação e montagem com os avatares. Ele foi escolhido devido a sua vasta gama de recursos para edição e manipulação de imagens, e por um dos integrantes do grupo possuir uma licença do software.</p>
 
 							<h3><li>OpenCV</li></h3>
 								<p>O OpenCV é uma biblioteca do Python utilizada para visão computacional e Machine Learninig. Para este laboratório, utilizaremos o <a href="https://pypi.org/project/opencv-python/">cv2</a>, que é um dos módulo do OpenCV a fim de simplificar a instalação, já que não é necessário todas as funções do OpenCV. 
@@ -63,15 +65,18 @@ import cv2
 # Import das imagens
 walter = cv2.imread('C:\\Users\\Waltinho\\minami\\TechTeam\\labs\\lab2\imagens_editadas\\walter_100.jpg')
 joao = cv2.imread('C:\\Users\\Waltinho\\minami\\TechTeam\\labs\\lab2\imagens_editadas\\joao_100.jpg')
+adinan = cv2.imread('C:\\Users\\Waltinho\\minami\\TechTeam\\labs\\lab2\imagens_editadas\\adinan_100.jpg')
 grupo = cv2.imread('C:\\Users\\Waltinho\\minami\\TechTeam\\labs\\lab2\imagens_editadas\\foto_grupo.jpg')
 
 # Conversão
 walter_gray = cv2.cvtColor(walter, cv2.COLOR_BGR2GRAY)
 joao_gray = cv2.cvtColor(joao, cv2.COLOR_BGR2GRAY)
+adinan_gray = cv2.cvtColor(adinan, cv2.COLOR_BGR2GRAY)
 grupo_gray = cv2.cvtColor(grupo, cv2.COLOR_BGR2GRAY)
 
 cv2.imwrite('walter_cinza.jpg',walter_gray)
 cv2.imwrite('joao_cinza.jpg',joao_gray)
+cv2.imwrite('adinan_cinza.jpg',adinan_gray)
 cv2.imwrite('grupo_cinza.jpg',grupo_gray)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
