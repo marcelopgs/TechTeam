@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../../assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
 	</head>
 	<body class="is-preload">
 
@@ -21,6 +22,8 @@
 					<ul>
 						<li><a href="../lab1/lab1.html">Lab 1</a></li>
 						<li><a href="../lab3/lab3.html">Lab 3</a></li>
+						<li><a href="../../index.html#two">Laboratórios</a></li>
+						<li><a href="../../index.html">Início</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -29,16 +32,111 @@
 			<div id="wrapper">
 
 				<!-- Main -->
+				<center>
+					<div>
+						<br><br><h3 class="main">Audiodescrição</h3>
+						<audio controls>
+							<source src="audio_lab1.ogg" type="audio/ogg">
+						</audio>
+					</div>
+				</center>
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Lab 2 - Aquisição de vídeo</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1 class="major">Lab 2 - Imagem e Captura de Vídeo</h1>
+								
+							<h2>Aquisição das imagens e vídeos</h2>
+								<p>A fim de diminuir ao máximo a presença de sombras na imagem, foram utilizados 3 focos de luz utilizando a filmadora, sendo duas delas laterais e a outra frontal. Devido a problemas de bateria, as luzes laterais perderam a potência durante o experimento, de modo a permitir parcialmente o surgimento de sombras nas últimas imagens capturadas. Além disso, foi realizado o ajuste de temperatura de cor da filmadora para minimizar o pós-processamento </p>
+								<p>A configuração utilizando a câmera do celular foi mais simples, utilizando apenas uma luz de anel e as configurações de imagem já presentes no aplicativo de câmera.</p>
+
+							<h2>Pós-processamento</h2>
+								O pós-processamento das imagens foi realizado utilizando o software <a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a> para as montagens, mudanças de cor e cortes,  e a biblioteca <a href="https://opencv.org/">OpenCV</a> em Python para mudanças de resolução e cor.
+
+							<h3><li>Photoshop</li></h3>
+
+							<h3><li>OpenCV</li></h3>
+								<p>O OpenCV é uma biblioteca do Python utilizada para visão computacional e Machine Learninig. Para este laboratório, utilizaremos o <a href="https://pypi.org/project/opencv-python/">cv2</a>, que é um dos módulo do OpenCV a fim de simplificar a instalação, já que não é necessário todas as funções do OpenCV. 
+								<p>A principal função utilizada é a <em>cv2.cvtColor(imagem, conversao)</em>, que converte a imagem passada como parâmetro para outro tipo de padrão de cor. Deste modo, utilizaremos essa função utilizando o parâmetro de conversão nativo do <em>cv2.COLOR_BGR2GRAY</em>, que converte do padrão RGB para cinza.
+								</p>  O código para converter as imagens originais em preto e branco utilizando o cv2 encontra-se a seguir:</p>
+									<pre><code class="python">
+import cv2
+
+# Import das imagens
+walter = cv2.imread('C:\\Users\\Waltinho\\minami\\TechTeam\\labs\\lab2\imagens_editadas\\walter_100.jpg')
+joao = cv2.imread('C:\\Users\\Waltinho\\minami\\TechTeam\\labs\\lab2\imagens_editadas\\joao_100.jpg')
+grupo = cv2.imread('C:\\Users\\Waltinho\\minami\\TechTeam\\labs\\lab2\imagens_editadas\\foto_grupo.jpg')
+
+# Conversão
+walter_gray = cv2.cvtColor(walter, cv2.COLOR_BGR2GRAY)
+joao_gray = cv2.cvtColor(joao, cv2.COLOR_BGR2GRAY)
+grupo_gray = cv2.cvtColor(grupo, cv2.COLOR_BGR2GRAY)
+
+cv2.imwrite('walter_cinza.jpg',walter_gray)
+cv2.imwrite('joao_cinza.jpg',joao_gray)
+cv2.imwrite('grupo_cinza.jpg',grupo_gray)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+									</code></pre>
+							<h2>Resultados obtidos</h2>
+
+								A seguir encontram os resultados obtidos das capturas, tanto as originais, quanto após o pós-processamento.
+							<h3>Imagens</h3>
+
+
+							<h4><li>Grupo</li></h4>
+								A seguir a foto original do grupo utilizando a filmadora:
+								<figure class="image fit"><img src="./imagens/11010047.JPG" alt="" /><figcaption>Foto original do grupo utilizando a filmadora</figcaption></figure>
+
+								<p>Após o pós-processamento, temos a seguir as novas versões:</p>
+								<figure class="image fit"><img src="./imagens_editadas/foto_grupo.JPG" alt=""/> <figcaption>Grupo com 100% da resolução</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/grupo_50.JPG" alt="" /><figcaption>Grupo com 50% da resolução</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/grupo_cinza.JPG" alt="" /><figcaption>Grupo preto e branco</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/grupo_avatar.JPG" alt="" /><figcaption>Avatares do grupo</figcaption></figure>
+
+
+
+							<h4><li>Adinan</li></h4>
+
+							<h4><li>João</li></h4>
+								A seguir a foto original do João utilizando a filmadora:
+								<figure class="image fit"><img src="./imagens/11010039.JPG" alt="" /><figcaption>Foto original do João utilizando a filmadora</figcaption></figure>
+
+								<p>Após o pós-processamento, temos a seguir as novas versões:</p>
+								<figure class="image fit"><img src="./imagens_editadas/joao_100.JPG" alt=""/> <figcaption>João com 100% da resolução</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/joao_50.JPG" alt="" /><figcaption>João com 50% da resolução</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/joao_cinza.JPG" alt="" /><figcaption>João preto e branco</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/joao_avatar.JPG" alt="" /><figcaption>João com um avatar</figcaption></figure>
+							<h4><li>Walter</li></h4>
+								A seguir a foto original do Walter utilizando a filmadora:
+								<figure class="image fit"><img src="./imagens/11010031.JPG" alt="" /><figcaption>Foto original do Walter utilizando a filmadora</figcaption></figure>
+
+								<p>Após o pós-processamento, temos a seguir as novas versões:</p>
+								<figure class="image fit"><img src="./imagens_editadas/walter_100.JPG" alt=""/> <figcaption>Walter com 100% da resolução</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/walter_50.JPG" alt="" /><figcaption>Walter com 50% da resolução</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/walter_cinza.JPG" alt="" /><figcaption>Walter preto e branco</figcaption></figure>
+								<figure class="image fit"><img src="./imagens_editadas/walter_avatar.JPG" alt="" /><figcaption>Walter com um avatar</figcaption></figure>
+
+							<h3>Vídeo</h3>
+								<p>Vídeo com a filmadora</p>
+								<center>
+									<iframe src="https://drive.google.com/file/d/1YSoWURhjgePRvRGUJBZ7mV7VbPSi1IZp/preview" width="640" height="480" allow="autoplay"></iframe>
+								</center>
+								<p>Vídeo com o celular</p>
+								<center>
+									<iframe src="https://drive.google.com/file/d/1pEtm5_lVG_r4MNX-4telU6jekiN0H4X8/preview" width="640" height="480" allow="autoplay"></iframe>
+								</center>
 						</div>
 					</section>
 
 			</div>
+
+					<center>	
+						<p>Por fim, o roteiro utilizado no laboratório.</p>
+						<p> 
+							<iframe src="EST019_Lab2_Imagem_e_CapturaVideo_v2.pdf" width="720" height="1055" style="border: none;">
+							</iframe>
+						</p>
+
+					</center>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
