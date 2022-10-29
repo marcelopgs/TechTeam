@@ -39,6 +39,12 @@
 							<p>Após a análise da DWT na luminância, é calculado o erro quadrático médio (MSE) e a Relação Sinal Ruído de Pico (PSNR) para comparar cada uma das imagens com a original. Desta forma, quanto maior a PSNR melhor a qualidade da imagem quando comparada com a versão original. Por fim, é criado uma tabela de comparação que relaciona o tamanho dos arquivos originais com os comprimidos com a DWT assim como a PSNR de cada uma delas</p>
 							<h2>Jupyter Notebook para o processamento das fotos</h2>
 							<p>Todos os procedimentos foram realizados utilizando o Jupyter Notebook, em Python, cujo o código completo encontra-se a seguir. Caso não consiga realizar o acesso, por favor entrar em contato com algum dos membros da equipe.</p>
+							<p>Surgiram muitos problemas na hora de processar as imagens. Na primeira parte, após realizar a idwt a imagem tinha um tamanho maior e foi necessario descartar uma coluna. Codigo usado:</p>
+							<p>1-> imgr= np.delete(imgr, 0, 1)</p>
+							<p>2-> CA1= np.delete(CA1, 0, 1)</p>
+							<p>3-> imgrec= np.delete(imgrec, 0, 1)</p>
+							<p>Além disso, foi necessario realizar uma normalização para apresentar a imagem recontruida, sem isso, a imagem aparecia completamente branca.Código usado:</p>
+							<p>4-> imgrec1 = imgrec1/np.amax(imgrec1) # if float</p>
 							<center><iframe src="https://nbviewer.org/github/TechTeamUFABC/TechTeam/blob/main/labs/lab4/Lab4_ImageDWT_y.ipynb" style="width:100%;height:600px; float:center"></iframe></center>
 						</div>
 					</section>
