@@ -1,0 +1,3 @@
+imgr= np.delete(imgr, 0, 1)
+CA1= np.delete(CA1, 0, 1)   matriz final completa
+imgrec= np.delete(imgrec, 0, 1) recontrução colorida original
